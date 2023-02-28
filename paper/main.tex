@@ -67,75 +67,76 @@ pdfkeywords={First keyword, Second keyword, More},
 \maketitle
 
 \begin{abstract}
-Tensor based time series decomposition methods based on SSA showed great results in both denoising and interpretability. Several forecasting techniques based on them were already explored, yet none provided simultaneously accurate, stable and computationally cheap inferring, especially for nonstationary environment. After an in-depth study of well known models we facilitated a new one comprising all three requirements for wearable brain-computer interfaces (BCI). The model was then tested on real-life data of brain activity and corresponding arm movements.
+Tensor based time series decomposition methods based on singular spectrum analysis showed great results in both denoising and interpretability. Several forecasting techniques based on them were already explored, yet none provided simultaneously accurate, stable and computationally cheap inferring. After an in-depth study of well known models we facilitated a new one comprising all three requirements for non-stationary quasi-periodic time series. The model was then tested on real-life data of electricity consumption and other well-explored datasets. 
 \end{abstract}
 
 
 \keywords{First keyword \and Second keyword \and More}
 
 \section{Introduction}
-SSA is a method widely used in the past decades in different areas, from economics to biology and social science [1].  One of main advantages is its ability to extract underlying frequencies from complex and multidimensional data, resulting in  variable number of components. SSA consists of two main stages: decomposition and reconstruction, both adjustable in terms of methods and hyperparameters used.
+Singular spectrum analysis (SSA) is a method widely used in the past decades in different areas, from economics to biology and social science [1].  One of main advantages is its ability to extract underlying frequencies from complex and multidimensional data, resulting in  variable number of components. SSA consists of two main stages: decomposition and reconstruction, both adjustable in terms of methods and hyperparameters used.
 
 Its tensor modification (TSSA) offers [2] a more robust and accurate results by converting a series into a tensor and using PARAFAC decomposition instead of usual SVD. It optimizes usage of information initially available to a model in cost of working with more multidimensional data SSA does. The problem of reconstruction is left untouched however.
 
-TSSA-EMD is then introduced [3] as way to supervise TSSA. EMD provides a better way
-to identify the number of frequency components within each subspace. With such enhancement algorithms achieves [4] a distinguishable growth in accuracy of signal reconstruction with denoising, leaving other methods far behind in particular tasks.
+Empirical mode decomposition (EMD) can then be used  to supervise TSSA, giving us TSSA-EMD[3]. It provides a better way to identify the number of frequency components within each subspace. With such enhancement algorithms achieves [4] a distinguishable growth in accuracy of signal reconstruction with denoising, leaving other methods far behind in particular tasks.
 
 The problem of forecasting time series has not yet being mentioned. Basic SSA shows [5] adequate results when working with series of constant-limited variation function. However it becomes highly unstable in two basic cases. With several outliers already false frequencies are extracted at decomposition stage, what does not lead to reconstruction defects but enforces unacceptable error even at earlier points of prediction. A variation growth affects SSA the same way, usually creating frequencies of much higher amplitude than are expected. That makes the early predictions seem accurate, yet giving unrealistic forecast long-wise.
 
 To conclude, SSA is a powerful but limited method.
 
-In biometrical data forecasting an accurate signal with a robust model can become a difference between detecting an early stage of an epilepsy strike or state it only afterwards. In the same manner improvements of BCI devices could be achieved by creating a stable prediction of brain activity in spans of tenths of milliseconds, leading to an opportunity for no-lag periphery device usage. 
-
-Knowing this we experiment to determine the difference between SSA and TSSA forecasting and try to create a robust model of signal decomposition, reconstruction and prediction.
+At the same time SSA does not utilize spatial information. Given a set of parallel time series it is meant to decompose each separately. TSSA instead can show better performance by working with them as with a whole dataset. Knowing this we experiment to determine the difference between SSA and TSSA forecasting and try to create a robust model of signal decomposition, reconstruction and prediction.
 \section{Problem}
 \label{sec:Problem}
 
 Let \(X = \left[x_1, x_2, ..., x_n\right]\) be a 1D time series, namely a vector. We suppose \(X\) has no trend, is quasi-periodic and it's phase trajectory is stationary.
 
 A parametric function \(f_r\) evaluating next \(r\) unknown time series values \([\widehat{x}_{n+1}, ..., \widehat{x}_{n+r}]\) at the time moment \(t + 1\) given prior series observations \(X\) is called the forecasting model:
+\begin{gather}
+	f_r(\widehat{w}, X) = \left[\widehat{x}_{n+1}, ..., \widehat{x}_{n+r}\right]. \\
+	X^{\widehat{r}} = \left[x_1, x_2, ..., x_n, \widehat{x}_{n+1}, ..., \widehat{x}_{n+r}\right].
+\end{gather}
 
-\begin{equation}
-	f(\widehat{w}, X) = [\widehat{x}_{n+1}, ..., \widehat{x}_{n+r}].
-\end{equation}
+The parameters \(\widehat{w}\) are obtained through optimization of a loss function specific for a dataset and a task, \(r\) is a hyperparameter for the model.
 
-The parameters \(\widehat{w}\) are obtained through optimization of a loss function specific for a dataset and a task, \(k\) is a hyperparameter for a model.
-
-The goal is, using one or several forecasting models, predict next \(h\) unknown time series values, with \(h\) possibly bigger than \(r\).
+The goal is, using one or several forecasting models with a prediction strategy (described in 2.1) resulting in a final model \(f\), compute next \(h\) unknown time series values, with \(h\) possibly bigger than \(r\). We are to minimize a loss function \(\mathcal{L}\) when given a realization of true future values of time series \(X^{\underline{h}} = \left[ x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_{n+h} \right]\) :
+\begin{gather}
+	X^{\widehat{h}} = f(X) \notag \\
+	\mathcal{L}\left( X^{\underline{h}}, X^{\widehat{h}} \right) \rightarrow \min_f
+\end{gather}
 
 \subsection{Prediction strategies}
 
-Three common method are explored.
+Two common method are explored.
 
 Recursive strategy uses forecasting model \(f = f_r\) until \(h\) following values for \(X\) are predicted:
-
-\begin{equation}
-	X^{r} = f(\widehat{w}, X), 
-	X^{2r} = f(\widehat{w}, X^{r}),
-	...,
-	X^{kr} = f(\widehat{w}, X^{(k-1)r}).
-\end{equation}
-
+\begin{gather}
+	X^{\widehat{r}} = f(\widehat{w}, X), \notag \\
+	X^{\widehat{2r}} = f(\widehat{w}, X^{\widehat{r}}),\notag \\
+	\dots, \\
+	X^{\widehat{kr}} = f(\widehat{w}, X^{\widehat{(k-1)r}}).\notag
+\end{gather}
 Where \( k = \lceil \frac{h}{r} \rceil.\)
 
 Straight strategy requires \(k\) separate models, each independently predicting \(r\) values:
+\begin{gather}
+	X^{\widehat{r, 1}} = f_1(\widehat{w}, X), \notag \\
+	X^{\widehat{r, 2}} = f(\widehat{w}, X), \notag \\
+	\dots, \\
+	X^{\widehat{r, k}} = f(\widehat{w}, X), \notag \\
+	X^{\widehat{kr}} = concatinate(X, X^{\widehat{r, 1}}, \dots, X^{\widehat{r, k}}) \notag
+\end{gather}
 
-\begin{equation}
-	X^{r, 1} = f_1(\widehat{w}, X), 
-	X^{r, 2} = f(\widehat{w}, X),
-	...,
-	X^{r, k} = f(\widehat{w}, X),
-	X^{kr} = concat[X, X^{r,1}, ..., X^{r, k}]
-\end{equation}
+[Pluses and minuses of both are explained]
 
 \subsection{SSA and TSSA}
 
-Description of those methods.
+Copypaste from https://sci-hub.ru/10.1109/mlsp.2013.6661921 could be found here
 
-\subsection{Forecasting models based on SSA}
+\subsection{Forecasting models based on SSA and TSSA}
 
-Description of those models.
+Copypaste from [Time series SSA forecasting] tutrial link from LinkReview could be found here.
 
+No idea on how to predict with TSSA - we are to explore this I suppose
 
 \section{Examples of citations, figures, tables, references}
 \label{sec:others}
