@@ -76,7 +76,7 @@ Tensor based time series decomposition methods based on singular spectrum analys
 \section{Introduction}
 Singular spectrum analysis (SSA) is a method widely used in the past decades in different areas, from economics to biology and social science [1].  One of main advantages is its ability to extract underlying frequencies from complex and multidimensional data, resulting in  variable number of components. SSA consists of two main stages: decomposition and reconstruction, both adjustable in terms of methods and hyperparameters used.
 
-Its tensor modification (TSSA) offers [2] a more robust and accurate results by converting a series into a tensor and using PARAFAC decomposition instead of usual SVD. It optimizes usage of information initially available to a model in cost of working with more multidimensional data SSA does. The problem of reconstruction is left untouched however.
+Its tensor modification (TSSA) offers [2] a more robust and accurate results by converting a series into a tensor and using  parallel factor analysis (PARAFAC) decomposition instead of usual SVD. It optimizes usage of information initially available to a model in cost of working with more multidimensional data SSA does. The problem of reconstruction is left untouched however.
 
 Empirical mode decomposition (EMD) can then be used  to supervise TSSA, giving us TSSA-EMD[3]. It provides a better way to identify the number of frequency components within each subspace. With such enhancement algorithms achieves [4] a distinguishable growth in accuracy of signal reconstruction with denoising, leaving other methods far behind in particular tasks.
 
@@ -88,49 +88,68 @@ At the same time SSA does not utilize spatial information. Given a set of parall
 \section{Problem}
 \label{sec:Problem}
 
-Let \(X = \left[x_1, x_2, ..., x_n\right]\) be a 1D time series, namely a vector. We suppose \(X\) has no trend, is quasi-periodic and it's phase trajectory is stationary.
+\subsection{Time series}
 
-A parametric function \(f_r\) evaluating next \(r\) unknown time series values \([\widehat{x}_{n+1}, ..., \widehat{x}_{n+r}]\) at the time moment \(t + 1\) given prior series observations \(X\) is called the forecasting model:
+Let \(x = \left[x_1, x_2, ..., x_n\right]\), \(x_i \in \mathbb{R}\) be a 1D time series, namely a vector. We suppose \(x\) has no trend, is quasi-periodic and it's phase trajectory is stationary.
+
+[do we need to describe phase trajectory here?]
+
+\subsection{Hankelization}
+
+One of the SSA steps requires Hankelization operator \(\mathcal{H}\) to be described. With 2D matrix \(i \times j\) it works as follows:
 \begin{gather}
-	f_r(\widehat{w}, X) = \left[\widehat{x}_{n+1}, ..., \widehat{x}_{n+r}\right]. \\
-	X^{\widehat{r}} = \left[x_1, x_2, ..., x_n, \widehat{x}_{n+1}, ..., \widehat{x}_{n+r}\right].
+\mathcal{H}M =
+\begin{pmatrix}
+	\widetilde{m}_{1} & \widetilde{m}_{2} & \dots & m_{i} \\
+	\widetilde{m}_{2} & \widetilde{m}_{3} & \dots & m_{i + 1} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	\widetilde{m}_{j} & \widetilde{m}_{j + 1} &  \dots & \widetilde{m}_{i + j - 1}
+\end{pmatrix} \notag \\
+\widetilde{m}_{k} = \sum_{i, j \in D_k} m_{i,j} / numD_k \\
+D_k = \{(\widehat{i}, \widehat{j}) : 1 \leq \widehat{i} \leq i, 1 \leq \widehat{j} \leq j, \widehat{i} + \widehat{j} = k + 1\} \notag
+\end{gather} 
+For a  higher dimensional tensor \(\mathcal{H}\) performs first index wise.
+
+\subsection{SSA}
+
+The basic SSA consists of two stages. The first is decomposition, it maps time series to a number of components. The second is reconstruction, it combines components to frequencies of interest.
+
+Decomposition: given a 1D vector \(x\) of size \(n\) and window size \(l\) it first creates a 2D embedding of it, a trajectory matrix \(X\) of size \(l_x \times l\):
+\begin{gather}
+X = [X_1, X_2, ..., X_{l}] =
+ \begin{pmatrix}
+	x_{1} & x_{2} & \dots & x_{l} \\
+	x_{2} & x_{3} & \dots & x_{l + 1} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	x_{l_{x}} & x_{l_x + 1} &  \dots & x_{l_x + l - 1}
+\end{pmatrix} \notag \\
+l_x = n - l + 1
 \end{gather}
 
-The parameters \(\widehat{w}\) are obtained through optimization of a loss function specific for a dataset and a task, \(r\) is a hyperparameter for the model.
+The actual value of \(l\) is chosen arbitrarily to include enough information about the signal variance.
 
-The goal is, using one or several forecasting models with a prediction strategy (described in 2.1) resulting in a final model \(f\), compute next \(h\) unknown time series values, with \(h\) possibly bigger than \(r\). We are to minimize a loss function \(\mathcal{L}\) when given a realization of true future values of time series \(X^{\underline{h}} = \left[ x_1, x_2, \dots, x_n, x_{n+1}, \dots, x_{n+h} \right]\) :
+Singular value decomposition (SVD) is then applied to \(X\) to obtain its singular values and vectors:
+
 \begin{gather}
-	X^{\widehat{h}} = f(X) \notag \\
-	\mathcal{L}\left( X^{\underline{h}}, X^{\widehat{h}} \right) \rightarrow \min_f
+X = \sum \limits_{i = 1}^{d} X_i = \sum \limits_{i = 1}^{d} \sqrt{\lambda_i} u_i v_i^T
 \end{gather}
 
-\subsection{Prediction strategies}
+Where \( \lambda_i \) is the \(i\)th eigenvalue, \(u_i\) is the corresponding left singular vector and \(v_i\) is the \(i\)th right singular vector; \(d\) is the total number of eigenvalues.
 
-Two common method are explored.
+Reconstruction: given a set of components \(X_i\) it first splits them into disjoint set and sums independently:
 
-Recursive strategy uses forecasting model \(f = f_r\) until \(h\) following values for \(X\) are predicted:
 \begin{gather}
-	X^{\widehat{r}} = f(\widehat{w}, X), \notag \\
-	X^{\widehat{2r}} = f(\widehat{w}, X^{\widehat{r}}),\notag \\
-	\dots, \\
-	X^{\widehat{kr}} = f(\widehat{w}, X^{\widehat{(k-1)r}}).\notag
-\end{gather}
-Where \( k = \lceil \frac{h}{r} \rceil.\)
-
-Straight strategy requires \(k\) separate models, each independently predicting \(r\) values:
-\begin{gather}
-	X^{\widehat{r, 1}} = f_1(\widehat{w}, X), \notag \\
-	X^{\widehat{r, 2}} = f(\widehat{w}, X), \notag \\
-	\dots, \\
-	X^{\widehat{r, k}} = f(\widehat{w}, X), \notag \\
-	X^{\widehat{kr}} = concatinate(X, X^{\widehat{r, 1}}, \dots, X^{\widehat{r, k}}) \notag
+I = \{ I_1, I_2, \dots, I_q \}, \bigsqcup \limits_{i = 1}^{q} I = \{1, 2, \dots, d\} \notag \\
+X = \sum \limits_{i = 1}^{q} \hat{X}_i = \sum \limits_{i = 1}^{q} \sum \limits_{j \in I_i} X_j
 \end{gather}
 
-[Pluses and minuses of both are explained]
+The choice of I is one of the most important aspects of SSA in terms of retrieving the desired frequencies.
 
-\subsection{SSA and TSSA}
+Hankelization is then applied to \(X\) and a time series is reconstructed from it (described later).
 
-Copypaste from https://sci-hub.ru/10.1109/mlsp.2013.6661921 could be found here
+\subsection{TSSA}
+
+TSSA is a generalization of SSA to work with a set of parallel time series. It is based on the idea that the time series are not independent and that the information contained in one time series can be used to improve the reconstruction of another.
 
 \subsection{Forecasting models based on SSA and TSSA}
 
