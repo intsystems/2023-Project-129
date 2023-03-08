@@ -76,7 +76,7 @@ Tensor based time series decomposition methods based on singular spectrum analys
 \section{Introduction}
 Singular spectrum analysis (SSA) is a method widely used in the past decades in different areas, from economics to biology and social science [1].  One of main advantages is its ability to extract underlying frequencies from complex and multidimensional data, resulting in  variable number of components. SSA consists of two main stages: decomposition and reconstruction, both adjustable in terms of methods and hyperparameters used.
 
-Its tensor modification (TSSA) offers [2] a more robust and accurate results by converting a series into a tensor and using  parallel factor analysis (PARAFAC) decomposition instead of usual SVD. It optimizes usage of information initially available to a model in cost of working with more multidimensional data SSA does. The problem of reconstruction is left untouched however.
+Its tensor modification (TSSA) offers [2] a more robust and accurate results by converting a series into a tensor and using  parallel factor analysis (PARAFAC) decomposition instead of the usual SVD. It optimizes usage of information initially available to a model in cost of working with more multidimensional data SSA does. The problem of reconstruction is left untouched however.
 
 Empirical mode decomposition (EMD) can then be used  to supervise TSSA, giving us TSSA-EMD[3]. It provides a better way to identify the number of frequency components within each subspace. With such enhancement algorithms achieves [4] a distinguishable growth in accuracy of signal reconstruction with denoising, leaving other methods far behind in particular tasks.
 
@@ -157,8 +157,15 @@ Copypaste from [Time series SSA forecasting] tutrial link from LinkReview could 
 
 No idea on how to predict with TSSA - we are to explore this I suppose
 
-\section{Examples of citations, figures, tables, references}
-\label{sec:others}
+\section{Experiment}
+
+Preliminary experimets are currently described here. The section will be updated when the real data will be utilized.
+
+We used sin(pi * t) + sin(e * t) to create a time series. We then applied SSA with different numbers of components taken at reconstruction step. The awaited result looks like this:
+
+\includegraphics[scale=0.3]{./images/prelim.png}
+
+\section{Trash}
 
 \subsection{Citations}
 Citations use \verb+natbib+. The documentation may be found at
