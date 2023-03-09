@@ -161,11 +161,11 @@ No idea on how to predict with TSSA - we are to explore this I suppose
 
 Preliminary experimets are currently described here. The section will be updated when the real data will be utilized.
 
-We use \(f(t) = \sin(\pi t) + np.sin(et)\) for \(t \in (0, 100)\), sampling it to \(100\) points to create a time series. We then applied SSA with different numbers of components taken at reconstruction step. The data generated looks as follows:
+We use \(f(t) = \sin(\pi t) + np.sin(et)\) for \(t \in (0, 100)\), sampling it uniformly to \(100\) points to create a time series. The data generated looks as follows:
 
 \includegraphics[scale=0.7]{./images/fig1.png}
 
-The actual results for log-MSE error for SSA with window size 5 are:
+SSA is then applied with different numbers of components taken at reconstruction step. The actual results for log-MSE error for window size 5 are:
 
 \includegraphics[scale=0.7]{./images/fig2.png}
 
