@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1678355986 "main.aux" "main.bbl" "main" 1678356017
+["bibtex main"] 1678356476 "main.aux" "main.bbl" "main" 1678356477
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "main.aux" 1678356017 3066 8bb9cd60b5ed56296496a33186e6b64c "pdflatex"
+  "main.aux" 1678356476 3066 ec893e7f633740988947d5bda3f54641 "pdflatex"
   "references.bib" 1677573286 954 f28d9c92be8a79c7f9924c5ce8b7b771 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1678356016 "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" "main.pdf" "main" 1678356017
+["pdflatex"] 1678356476 "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" "main.pdf" "main" 1678356477
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0600.tfm" 1677573374 3248 7c0b9d76a2cd84ed06764a4c6eea5de4 ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0700.tfm" 1677573370 3256 b15a2ce2310c0038b96c5235b038f0eb ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0900.tfm" 1677573361 3244 8db84377f89b8850acd19c9879de82e7 ""
@@ -14,7 +14,7 @@
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1677573365 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1728.tfm" 1677573353 3252 92d08740ce00199d6cf9ff4aaada81d1 ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/latt1000.tfm" 1677573357 1272 55f67101730a20777decd892fb4b4e3e ""
-  "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" 1678356016 10238 797ad674da4c61d7eede391bdf27b34d ""
+  "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" 1678356475 10429 198ae4da786143cb7caadafd0fa4dbec ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc" 1136849721 3141 82d5616418ed8d5de703b3951bedecb4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -143,10 +143,11 @@
   "arxiv.sty" 1677573286 7641 73d629a9ecdf79da8148f7f0df8c6662 ""
   "images/fig1.png" 1678355712 54725 9c594834e655aa6a5d6d5fd65e06eab2 ""
   "images/fig2.png" 1678355815 23424 608fa041ca73e0720effb4a0da8d3dda ""
-  "main.aux" 1678356017 3066 8bb9cd60b5ed56296496a33186e6b64c "pdflatex"
-  "main.bbl" 1678355986 1299 5651b39c1da61d2aa0ad8c9a3d08aa2e "bibtex main"
-  "main.out" 1678356017 1370 f2109f4a7019f87a6dbf7a7ab832e63c "pdflatex"
-  "main.tex" 1678356016 10238 797ad674da4c61d7eede391bdf27b34d ""
+  "images/prelim.png" 1678311352 42415 177a924210cdb639f318014e2fbf8a1d ""
+  "main.aux" 1678356476 3066 ec893e7f633740988947d5bda3f54641 "pdflatex"
+  "main.bbl" 1678356476 1299 5651b39c1da61d2aa0ad8c9a3d08aa2e "bibtex main"
+  "main.out" 1678356476 1370 f2109f4a7019f87a6dbf7a7ab832e63c "pdflatex"
+  "main.tex" 1678356475 10429 198ae4da786143cb7caadafd0fa4dbec ""
   (generated)
   "main.aux"
   "main.log"

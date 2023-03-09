@@ -808,6 +808,11 @@ INPUT ./images/fig2.png
 INPUT ./images/fig2.png
 INPUT ./images/fig2.png
 INPUT ./images/fig2.png
+INPUT ./images/prelim.png
+INPUT ./images/prelim.png
+INPUT ./images/prelim.png
+INPUT ./images/prelim.png
+INPUT ./images/prelim.png
 INPUT /Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0700.tfm
 INPUT /Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0600.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
