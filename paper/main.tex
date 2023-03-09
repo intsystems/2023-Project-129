@@ -159,6 +159,8 @@ No idea on how to predict with TSSA - we are to explore this I suppose
 
 \section{Experiment}
 
+Thought different data exploration multiple reconstruction strategies were tested: first-k SSA, first-k TSSA, [katrutsa-isachenko]. Means squared error (MSE) was used as a measure of error, minimizing it is an optimization task for which optimum method is to be found. Several synthetic time series were generated to test the methods. Then the real data of electricity consumption was used to test the methods.
+
 Preliminary experimets are currently described here. The section will be updated when the real data will be utilized.
 
 We use \(f(t) = \sin(\pi t) + np.sin(et)\) for \(t \in (0, 100)\), sampling it uniformly to \(100\) points to create a time series. The data generated looks as follows:
