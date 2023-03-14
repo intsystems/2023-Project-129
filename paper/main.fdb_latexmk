@@ -1,11 +1,11 @@
 # Fdb version 3
-["pdflatex"] 1678806329 "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" "main.pdf" "main" 1678806330
+["pdflatex"] 1678810988 "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" "main.pdf" "main" 1678810988
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0900.tfm" 1677573361 3244 8db84377f89b8850acd19c9879de82e7 ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1000.tfm" 1677573349 3220 0e417eaf233b160335902e97259a6c77 ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1677573365 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1728.tfm" 1677573353 3252 92d08740ce00199d6cf9ff4aaada81d1 ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/latt1000.tfm" 1677573357 1272 55f67101730a20777decd892fb4b4e3e ""
-  "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" 1678806328 11613 d229e72c2528e14425403fc85fb67dc9 ""
+  "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" 1678810987 12183 00425ca1c9f4a214b1d8dc32a79f6b6d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc" 1136849721 3141 82d5616418ed8d5de703b3951bedecb4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm" 1136768653 6672 e3ab9e37e925f3045c9005e6d1473d56 ""
@@ -126,10 +126,11 @@
   "arxiv.sty" 1677573286 7641 73d629a9ecdf79da8148f7f0df8c6662 ""
   "images/fig1.png" 1678355712 54725 9c594834e655aa6a5d6d5fd65e06eab2 ""
   "images/fig2.png" 1678355815 23424 608fa041ca73e0720effb4a0da8d3dda ""
+  "images/fig3.png" 1678810985 33074 7e0ee3169462cdbeb88af4c11625ef89 ""
   "images/prelim.png" 1678311352 42415 177a924210cdb639f318014e2fbf8a1d ""
-  "main.aux" 1678806329 1883 2929840f97d236643c7c5892196f261c "pdflatex"
-  "main.out" 1678806329 1089 5ecdf76c3b852f748e3af54554fb1699 "pdflatex"
-  "main.tex" 1678806328 11613 d229e72c2528e14425403fc85fb67dc9 ""
+  "main.aux" 1678810988 1883 ed0c8b66675b43a2344931b5bb4ac06b "pdflatex"
+  "main.out" 1678810988 1089 5ecdf76c3b852f748e3af54554fb1699 "pdflatex"
+  "main.tex" 1678810987 12183 00425ca1c9f4a214b1d8dc32a79f6b6d ""
   (generated)
   "main.aux"
   "main.log"

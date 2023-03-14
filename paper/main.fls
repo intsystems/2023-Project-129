@@ -813,6 +813,11 @@ INPUT ./images/prelim.png
 INPUT ./images/prelim.png
 INPUT ./images/prelim.png
 INPUT ./images/prelim.png
+INPUT ./images/fig3.png
+INPUT ./images/fig3.png
+INPUT ./images/fig3.png
+INPUT ./images/fig3.png
+INPUT ./images/fig3.png
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
