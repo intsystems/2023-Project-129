@@ -112,7 +112,7 @@ def __main__():
 
         metrics_ssa['MSE'].append(mse)
         metrics_ssa['MAPE'].append(mape)
-    
+
     plt.figure()
     sns.lineplot(x=np.arange(1, window_width + 1), y=metrics_ssa['MAPE'])
     plt.ylabel('MAPE')
@@ -120,7 +120,7 @@ def __main__():
     plt.title('MAPE for SSA, window width = 24')
     plt.savefig('ssa_mape.png')
 
-    hankel_x = hankel(hankel(x, window_width), window_width)
+    hankel_x = hankel(hankel(x, window_width), 7)
 
     parafac_rank = args.parafac_rank
     parafac_x = tl.decomposition.parafac(
