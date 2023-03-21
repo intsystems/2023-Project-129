@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1679433404 "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" "main.pdf" "main" 1679433404
+["pdflatex"] 1679433667 "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" "main.pdf" "main" 1679433667
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0500.tfm" 1679432213 3252 bc0f8cc163ba94bbce20e59f671a255d ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0700.tfm" 1677573370 3256 b15a2ce2310c0038b96c5235b038f0eb ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0900.tfm" 1677573361 3244 8db84377f89b8850acd19c9879de82e7 ""
@@ -7,7 +7,7 @@
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1677573365 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1728.tfm" 1677573353 3252 92d08740ce00199d6cf9ff4aaada81d1 ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/latt1000.tfm" 1677573357 1272 55f67101730a20777decd892fb4b4e3e ""
-  "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" 1679433403 13983 4b2e7ab140f1d84c5013127584641e4a ""
+  "/Users/kingcake/hw/m1p/2023-Project-129/paper/main.tex" 1679433666 13994 ed05433df2b5f76df01103c2d89b226d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc" 1136849721 3141 82d5616418ed8d5de703b3951bedecb4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm" 1136768653 6672 e3ab9e37e925f3045c9005e6d1473d56 ""
@@ -130,9 +130,9 @@
   "images/fig2.png" 1678355815 23424 608fa041ca73e0720effb4a0da8d3dda ""
   "images/fig3.png" 1678810985 33074 7e0ee3169462cdbeb88af4c11625ef89 ""
   "images/prelim.png" 1678311352 42415 177a924210cdb639f318014e2fbf8a1d ""
-  "main.aux" 1679433404 2003 f0094bf48b3ddfcf2a69e335095ab3b7 "pdflatex"
-  "main.out" 1679433404 1257 10b9ba17425836f498041a80cc674d7f "pdflatex"
-  "main.tex" 1679433403 13983 4b2e7ab140f1d84c5013127584641e4a ""
+  "main.aux" 1679433667 2014 cf98e2457ed44e5be28530a8cd5738ec "pdflatex"
+  "main.out" 1679433667 1315 c636f5e90bf2eacc90162d7d9e2def6a "pdflatex"
+  "main.tex" 1679433666 13994 ed05433df2b5f76df01103c2d89b226d ""
   (generated)
   "main.aux"
   "main.log"
