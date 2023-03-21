@@ -157,6 +157,33 @@ Copypaste from [Time series SSA forecasting] tutrial link from LinkReview could 
 
 No idea on how to predict with TSSA - we are to explore this I suppose
 
+\section{SSA and TSSA comparison}
+
+SSA with window width \(l\) is taken as a baseline, with optimum \(l\) found by gridsearch for each particular dataset.
+
+For TSSA the time series is first converted into matrix by disjoint windowing:
+
+\begin{gather}
+X = [X_1, X_2, ..., X_{m}] =
+ \begin{pmatrix}
+	x_{1} & x_{2} & \dots & x_{m} \\
+	x_{m+1} & x_{m+2} & \dots & x_{2m} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	x_{k_{x}+1} & x_{k_x + 2} &  \dots & x_{k_x + m}
+\end{pmatrix} \text{, }
+k_x = \lfloor \frac{n}{m} \rfloor
+\end{gather}
+
+Where the hyperparameter \(m\) is gridsearched for each dataset to lower the resulting reconstruction error.
+
+The matrix is then Hankelized with window width \(l\) and the PARAFAC is applied to it, resulting in a set of components in Khatri-Rao form. They are then sorted by an individual loss optimization so that the components are in the order of decreasing importance.
+
+For both SSA and TSSA the first-\(k\) reconstruction loss is calculated for each \(k\). Area under curve (AUC) is then calculated for the loss curves and the method with the lowest AUC is chosen as the best for a dataset.
+
+As a standalone solution a TSSA with both \(m\) and \(l\) gridsearched to achive the best results. Compared to SSA, TSSA is computationally expensive, but more information about a time series as whole is saved in each local area inside a hankelized matrix, giving it more opportunities to find the best reconstruction. Its ability to utilize spatial information also makes it applicable to a set of parallel time series, which is not possible with SSA. This results in a better reconstruction error and higher robustness.
+
+For a real-time application TSSA hyperparameters are estimated on a training set and then used for a suffix of a particular time series realization.
+
 \section{Experiment}
 
 Thought different data exploration multiple reconstruction strategies were tested: first-k SSA, first-k TSSA, [katrutsa-isachenko]. Means squared error (MSE) was used as a measure of error, minimizing it is an optimization task for which optimum method is to be found. Several synthetic time series were generated to test the methods. Then the real data of electricity consumption was used to test the methods.

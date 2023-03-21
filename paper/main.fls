@@ -798,6 +798,8 @@ INPUT /Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm120
 INPUT /usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1000.tfm
 INPUT /Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0900.tfm
+INPUT /Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0700.tfm
+INPUT /Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0500.tfm
 INPUT ./images/fig1.png
 INPUT ./images/fig1.png
 INPUT ./images/fig1.png
