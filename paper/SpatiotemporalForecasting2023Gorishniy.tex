@@ -17,37 +17,24 @@
 
 
 
-\title{Spatiotemporal forecasting with convolutions and tensor decomposition}
+\title{Spatiotemporal forecasting with convolutionals and tensor decomposition}
 
-\author{ David S.~Hippocampus\thanks{Use footnote for providing further
-		information about author (webpage, alternative
-		address)---\emph{not} for acknowledging funding agencies.} \\
-	Department of Computer Science\\
-	Cranberry-Lemon University\\
-	Pittsburgh, PA 15213 \\
-	\texttt{hippo@cs.cranberry-lemon.edu} \\
+\author{ Max Gorishniy \\
+	Phystech School of Applied Mathematics and Computer Science\\
+	Moscow institute of physics and technology\\
+	Mosow \\
+	\texttt{gorishnii.mp@phystech.edu} \\
 	%% examples of more authors
 	\And
-	Elias D.~Striatum \\
-	Department of Electrical Engineering\\
-	Mount-Sheikh University\\
-	Santa Narimana, Levand \\
-	\texttt{stariate@ee.mount-sheikh.edu} \\
-	%% \AND
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
+	Nadezhda Alsahanova \\
+	Moscow institute of physics and technology \\
+	Moscow \\
+	\texttt{alsahanova.nyu@phystech.edu} \\
+	\And
+	Vadim Strijov \\
+	Moscow institute of physics and technology \\
+	Moscow \\
+	\texttt{strijov@phystech.edu} \\
 }
 \date{}
 
@@ -57,10 +44,9 @@
 %%% Once the PDF is generated, you can check the metadata with
 %%% $ pdfinfo template.pdf
 \hypersetup{
-pdftitle={A template for the arxiv style},
-pdfsubject={q-bio.NC, q-bio.QM},
-pdfauthor={David S.~Hippocampus, Elias D.~Striatum},
-pdfkeywords={First keyword, Second keyword, More},
+pdftitle={Spatiotemporal forecasting with convolutionals and tensor decomposition},
+pdfauthor={Max Gorishniy, Nadezhda Alsahanova, Vadim Strijov},
+pdfkeywords={SSA, TSSA, time series reconstruction},
 }
 
 \begin{document}
@@ -71,16 +57,16 @@ Tensor based time series decomposition methods based on singular spectrum analys
 \end{abstract}
 
 
-\keywords{First keyword \and Second keyword \and More}
+\keywords{SSA \and TSSA \and time series reconstruction}
 
 \section{Introduction}
-Singular spectrum analysis (SSA) is a method widely used in the past decades in different areas, from economics to biology and social science [1].  One of main advantages is its ability to extract underlying frequencies from complex and multidimensional data, resulting in  variable number of components. SSA consists of two main stages: decomposition and reconstruction, both adjustable in terms of methods and hyperparameters used.
+Singular spectrum analysis (SSA) is a method widely used in the past decades in different areas, from economics to biology and social science \cite{golyandina2020}.  One of main advantages is its ability to extract underlying frequencies from complex and multidimensional data, resulting in  variable number of components. SSA consists of two main stages: decomposition and reconstruction, both adjustable in terms of methods and hyperparameters used.
 
-Its tensor modification (TSSA) offers [2] a more robust and accurate results by converting a series into a tensor and using  parallel factor analysis (PARAFAC) decomposition instead of the usual SVD. It optimizes usage of information initially available to a model in cost of working with more multidimensional data SSA does. The problem of reconstruction is left untouched however.
+Its modification, tensor singular spectrum analysis (TSSA) \cite{kouchaki2013}, offers a more robust and accurate results by converting a series into a tensor and using  parallel factor analysis (PARAFAC) decomposition instead of the usual SVD. It optimizes usage of information initially available to a model in cost of working with more multidimensional data SSA does. The problem of reconstruction is left untouched however.
 
-Empirical mode decomposition (EMD) can then be used  to supervise TSSA, giving us TSSA-EMD[3]. It provides a better way to identify the number of frequency components within each subspace. With such enhancement algorithms achieves [4] a distinguishable growth in accuracy of signal reconstruction with denoising, leaving other methods far behind in particular tasks.
+Empirical mode decomposition (EMD) can then be used  to supervise TSSA, giving us TSSA-EMD \cite{kouchaki2015}. It provides a better way to identify the number of frequency components within each subspace. With such enhancement algorithms achieves \cite{kouchaki2015} a distinguishable growth in accuracy of signal reconstruction with denoising, leaving other methods far behind in particular tasks.
 
-The problem of forecasting time series has not yet being mentioned. Basic SSA shows [5] adequate results when working with series of constant-limited variation function. However it becomes highly unstable in two basic cases. With several outliers already false frequencies are extracted at decomposition stage, what does not lead to reconstruction defects but enforces unacceptable error even at earlier points of prediction. A variation growth affects SSA the same way, usually creating frequencies of much higher amplitude than are expected. That makes the early predictions seem accurate, yet giving unrealistic forecast long-wise.
+Basic SSA shows \cite{golyandina2020} adequate results when working with series of constant-limited variation function. However it becomes highly unstable in two basic cases. With several outliers already false frequencies are extracted at decomposition stage, what does not lead to reconstruction defects but enforces unacceptable error even at earlier points of prediction. A variation growth affects SSA the same way, usually creating frequencies of much higher amplitude than are expected. That makes the early predictions seem accurate, yet giving unrealistic forecast long-wise.
 
 To conclude, SSA is a powerful but limited method.
 
@@ -91,8 +77,6 @@ At the same time SSA does not utilize spatial information. Given a set of parall
 \subsection{Time series}
 
 Let \(x = \left[x_1, x_2, ..., x_n\right]\), \(x_i \in \mathbb{R}\) be a 1D time series, namely a vector. We suppose \(x\) has no trend, is quasi-periodic and it's phase trajectory is stationary.
-
-[do we need to describe phase trajectory here?]
 
 \subsection{Hankelization}
 
@@ -116,7 +100,7 @@ The basic SSA consists of two stages. The first is decomposition, it maps time s
 
 Decomposition: given a 1D vector \(x\) of size \(n\) and window size \(l\) it first creates a 2D embedding of it, a trajectory matrix \(X\) of size \(l_x \times l\):
 \begin{gather}
-X = [X_1, X_2, ..., X_{l}] =
+X = [X_1, X_2, ..., X_{l}] = \mathcal{H} x = 
  \begin{pmatrix}
 	x_{1} & x_{2} & \dots & x_{l} \\
 	x_{2} & x_{3} & \dots & x_{l + 1} \\
@@ -143,19 +127,19 @@ I = \{ I_1, I_2, \dots, I_q \}, \bigsqcup \limits_{i = 1}^{q} I = \{1, 2, \dots,
 X = \sum \limits_{i = 1}^{q} \hat{X}_i = \sum \limits_{i = 1}^{q} \sum \limits_{j \in I_i} X_j
 \end{gather}
 
-The choice of I is one of the most important aspects of SSA in terms of retrieving the desired frequencies.
+The choice of I is one of the most important aspects of SSA in terms of retrieving the desired frequencies. \(X_i\) are considered base frequencies for the initial time series. First \(k\) of them are then taking as a basis for the reconstruction. The rest are discarded.
 
-Hankelization is then applied to \(X\) and a time series is reconstructed from it (described later).
+Inverse hankelization is then applied to \(\sum_{i=1}^{k}X_i\) by taking mean of secondary diagonal elements, resulting in a reconstructed time series \(\hat{x}\).
+
+% \begin{gather}
+% \hat{x} = \sum \limits_{i = 1}^{l_x} \sum \limits_{j = 1}^{l} \hat{X}_{i,j} / l_x, l_x = n - l + 1
+% \end{gather}
 
 \subsection{TSSA}
 
-TSSA is a generalization of SSA to work with a set of parallel time series. It is based on the idea that the time series are not independent and that the information contained in one time series can be used to improve the reconstruction of another.
+TSSA is a generalization of SSA to work with a set of parallel time series. It is based on the assumption that parallel time serieses are not independent and that the information contained in one of them can be used to improve the general reconstruction error. 
 
-\subsection{Forecasting models based on SSA and TSSA}
-
-Copypaste from [Time series SSA forecasting] tutrial link from LinkReview could be found here.
-
-No idea on how to predict with TSSA - we are to explore this I suppose
+PARAFAC decomposition is used to decompose the tensor of time series into a set of components in Khatri-Rao form, sorted by their contribution to the reconstruction error. First \(k\) components are then taken and summed to form the reconstructed after Khatri-Rao form being unreaveled to a final tensor.
 
 \section{SSA and TSSA comparison, algorithm}
 
@@ -188,21 +172,15 @@ For a real-time application TSSA hyperparameters are estimated on a training set
 
 Thought different data exploration multiple reconstruction strategies were tested: first-k SSA, first-k TSSA, [katrutsa-isachenko]. Means squared error (MSE) was used as a measure of error, minimizing it is an optimization task for which optimum method is to be found. Several synthetic time series were generated to test the methods. Then the real data of electricity consumption was used to test the methods.
 
-Preliminary experimets are currently described here. The section will be updated when the real data will be utilized.
-
 We use \(f(t) = \sin(\pi t) + np.sin(et)\) for \(t \in (0, 100)\), sampling it uniformly to \(100\) points to create a time series. The data generated looks as follows:
 
 \includegraphics[scale=0.7]{./images/fig1.png}
 
-SSA is then applied with different numbers of components taken at reconstruction step. The actual results for log-MSE error for window size 5 are:
+SSA is then applied with different numbers of components taken at reconstruction step. The results for log-MSE error for window size 5 are as follows:
 
 \includegraphics[scale=0.7]{./images/fig2.png}
 
 With first 4 components taken at reconstruction step the error is non-significant already. More complex data must be taken to see the difference when applying PARAFAC.
-
-The results are in full agreement with the awaited groth of likelihood of error with the number of components taken at reconstruction step.
-
-\includegraphics[scale=0.3]{./images/prelim.png}
 
 \section{Real data experiments}
 
@@ -288,5 +266,13 @@ Electricity consumption dataset consists of 8760 samples - one for each hour of 
 
 % \bibliographystyle{unsrtnat}
 % \bibliography{references}
+
+\section{Conclusion}
+
+SSA and TSSA both are powerful methods for time series analysis. They can extract interpretable frequencies and reconstruct a denoised series of them. SSA is computationally cheap and is easier to setup, but it is not able to utilize spatial information. TSSA is computationally expensive, but on certain datasetsets with proper parameters choice can achieve better reconstruction error. In the future it is planned to create more optimal algorithm for the choice of TSSA parameters so it could achive lowest error for a particular dataset without gridsearch or manual parameter tuning.
+
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{references}
 
 \end{document}

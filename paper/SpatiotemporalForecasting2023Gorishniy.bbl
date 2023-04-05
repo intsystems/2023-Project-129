@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{golyandina2020}
+Nina Golyandina.
+\newblock Particularities and commonalities of singular spectrum analysis as a
+  method of time series analysis and signal processing.
+\newblock In {\em WIREs Computational Statistics}. WIREs, 2020.
+
+\bibitem{kouchaki2013}
+Sanei Kouchaki.
+\newblock Tensor based singular spectrum analysis for nonstationary source
+  separation.
+\newblock 2013.
+
+\bibitem{kouchaki2015}
+DerkJan~Dijk Samaneh~Kouchaki, Saeid~Sanei.
+\newblock Tensor based singular spectrum analysis for automatic scoring of
+  sleep eeg.
+\newblock 2015.
+
+\bibitem{usmanova20}
+V.V.~Strijov K.R.~Usmanova.
+\newblock Models of detection relationship between time series in forecasting
+  problems.
+\newblock 2018.
+
+\end{thebibliography}
