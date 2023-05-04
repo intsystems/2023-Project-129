@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex SpatiotemporalForecasting2023Gorishniy"] 1680735707 "SpatiotemporalForecasting2023Gorishniy.aux" "SpatiotemporalForecasting2023Gorishniy.bbl" "SpatiotemporalForecasting2023Gorishniy" 1680735708
+["bibtex SpatiotemporalForecasting2023Gorishniy"] 1683196788 "SpatiotemporalForecasting2023Gorishniy.aux" "SpatiotemporalForecasting2023Gorishniy.bbl" "SpatiotemporalForecasting2023Gorishniy" 1683196801
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "SpatiotemporalForecasting2023Gorishniy.aux" 1680735708 2355 d7e0991590ed69a71a3c334ea022888b "pdflatex"
+  "SpatiotemporalForecasting2023Gorishniy.aux" 1683196801 2355 78ab03ffb66f7658e8ade6c61ea78e22 "pdflatex"
   "references.bib" 1680735592 839 c3e2664995f6d0def2c9d42ebdd6238e ""
   (generated)
   "SpatiotemporalForecasting2023Gorishniy.bbl"
   "SpatiotemporalForecasting2023Gorishniy.blg"
-["pdflatex"] 1680735707 "/Users/kingcake/hw/m1p/2023-Project-129/paper/SpatiotemporalForecasting2023Gorishniy.tex" "SpatiotemporalForecasting2023Gorishniy.pdf" "SpatiotemporalForecasting2023Gorishniy" 1680735708
+["pdflatex"] 1683196800 "/Users/kingcake/hw/m1p/2023-Project-129/paper/SpatiotemporalForecasting2023Gorishniy.tex" "SpatiotemporalForecasting2023Gorishniy.pdf" "SpatiotemporalForecasting2023Gorishniy" 1683196801
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0500.tfm" 1679432213 3252 bc0f8cc163ba94bbce20e59f671a255d ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0700.tfm" 1677573370 3256 b15a2ce2310c0038b96c5235b038f0eb ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0900.tfm" 1677573361 3244 8db84377f89b8850acd19c9879de82e7 ""
@@ -14,7 +14,7 @@
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1677573365 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1728.tfm" 1677573353 3252 92d08740ce00199d6cf9ff4aaada81d1 ""
   "/Users/kingcake/Library/texlive/2022/texmf-var/fonts/tfm/lh/lh-t2a/latt1000.tfm" 1677573357 1272 55f67101730a20777decd892fb4b4e3e ""
-  "/Users/kingcake/hw/m1p/2023-Project-129/paper/SpatiotemporalForecasting2023Gorishniy.tex" 1680735706 14563 923dbff6d56b68da59ae7ee6cb759c69 ""
+  "/Users/kingcake/hw/m1p/2023-Project-129/paper/SpatiotemporalForecasting2023Gorishniy.tex" 1683196800 14770 be24d165592b5c50eb8e04ad6eff3595 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc" 1136849721 3141 82d5616418ed8d5de703b3951bedecb4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm" 1136768653 6672 e3ab9e37e925f3045c9005e6d1473d56 ""
@@ -124,14 +124,15 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1676466744 2826441 9203621a241b11f24e81817f919b8ea2 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "SpatiotemporalForecasting2023Gorishniy.aux" 1680735708 2355 d7e0991590ed69a71a3c334ea022888b "pdflatex"
-  "SpatiotemporalForecasting2023Gorishniy.bbl" 1680735707 765 a2fd1c73d832960c4a3b3054199831cb "bibtex SpatiotemporalForecasting2023Gorishniy"
-  "SpatiotemporalForecasting2023Gorishniy.out" 1680735708 1133 c1407799645380d7c0a52d07759d0a6e "pdflatex"
-  "SpatiotemporalForecasting2023Gorishniy.tex" 1680735706 14563 923dbff6d56b68da59ae7ee6cb759c69 ""
+  "SpatiotemporalForecasting2023Gorishniy.aux" 1683196801 2355 78ab03ffb66f7658e8ade6c61ea78e22 "pdflatex"
+  "SpatiotemporalForecasting2023Gorishniy.bbl" 1683196788 765 a2fd1c73d832960c4a3b3054199831cb "bibtex SpatiotemporalForecasting2023Gorishniy"
+  "SpatiotemporalForecasting2023Gorishniy.out" 1683196801 1133 c1407799645380d7c0a52d07759d0a6e "pdflatex"
+  "SpatiotemporalForecasting2023Gorishniy.tex" 1683196800 14770 be24d165592b5c50eb8e04ad6eff3595 ""
   "arxiv.sty" 1677573286 7641 73d629a9ecdf79da8148f7f0df8c6662 ""
   "images/fig1.png" 1678355712 54725 9c594834e655aa6a5d6d5fd65e06eab2 ""
   "images/fig2.png" 1678355815 23424 608fa041ca73e0720effb4a0da8d3dda ""
-  "images/fig3.png" 1678810985 33074 7e0ee3169462cdbeb88af4c11625ef89 ""
+  "images/result_bad.png" 1683196569 32161 fcf2ca30356515c232ec4a1f9c4b987e ""
+  "images/result_good.png" 1683196569 36878 f5e6fa7e96ab67aed9af8ef87fedfc55 ""
   (generated)
   "SpatiotemporalForecasting2023Gorishniy.aux"
   "SpatiotemporalForecasting2023Gorishniy.log"

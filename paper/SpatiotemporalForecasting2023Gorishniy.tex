@@ -186,9 +186,13 @@ With first 4 components taken at reconstruction step the error is non-significan
 
 Example of the experiment on a real-data time series is described here: usage of first-k SSA reconstruction, hankelization of the data and PARAFAC decomposition for it. The results on different datasets are listed in the end.
 
-Electricity consumption dataset consists of 8760 samples - one for each hour of the year. For SSA it is given with window size 24, acquiring that number of base frequencies. For each \(k \in [1, 24]\) components are then summed and a reconstruction error MAPE is calculated. For PARAFAC the data is hankelized and then decomposed into Khatri-Rao form with \(k = 24\) components. Same prefix sum operation is applied to the components and the reconstruction error is calculated. The results are shown on the figure below.
+Electricity consumption dataset consists of 8760 samples - one for each hour of the year. For SSA it is given with window size 24, acquiring that number of base frequencies. For each \(k \in [1, 24]\) components are then summed and a reconstruction error MAPE is calculated. For PARAFAC the data is hankelized and then decomposed into Khatri-Rao form with \(k = 24\) components. Same prefix sum operation is applied to the components and the reconstruction error is calculated.
 
-\includegraphics[scale=0.7]{./images/fig3.png}
+\includegraphics[scale=0.7]{./images/result_bad.png}
+
+Petrol consumption per day for the year duration, 365 samples. For TSSA disjoint partition with \(l = 4\) was performed, then for both SSA and TSSA hankelization with \(k = 7\) was used. 
+
+\includegraphics[scale=0.7]{./images/result_good.png}
 
 % \begin{table}
 % 	\caption{MAPE comparison on real data.}
