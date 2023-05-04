@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1683197149 "/Users/kingcake/hw/m1p/2023-Project-129/slides/main.tex" "main.pdf" "main" 1683197151
-  "/Users/kingcake/hw/m1p/2023-Project-129/slides/main.tex" 1683197149 14314 670794a7fd4e959e416f89c14a1140ba ""
+["pdflatex"] 1683210061 "/Users/kingcake/hw/m1p/2023-Project-129/slides/main.tex" "main.pdf" "main" 1683210062
+  "/Users/kingcake/hw/m1p/2023-Project-129/slides/main.tex" 1683210060 14316 a381143f1a18a56e1824a839cac073ba ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/opensans/a_uw4ovh.enc" 1561498186 3110 9d210589939f691a9f55a566ef920c22 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -234,10 +234,10 @@
   "images/energy.png" 1681206126 76389 8f20a769af1a8c1aaa0e4b301e891f21 ""
   "images/result_bad.png" 1681209904 32161 fcf2ca30356515c232ec4a1f9c4b987e ""
   "images/result_good.png" 1681209584 36878 f5e6fa7e96ab67aed9af8ef87fedfc55 ""
-  "main.aux" 1683197151 2755 b80a44f2853eeef3796ea9f17c1e0d7b "pdflatex"
-  "main.nav" 1683197151 1109 07396102f9d82bf25877ba7d82798efb "pdflatex"
+  "main.aux" 1683210062 2755 b80a44f2853eeef3796ea9f17c1e0d7b "pdflatex"
+  "main.nav" 1683210062 1109 07396102f9d82bf25877ba7d82798efb "pdflatex"
   "main.out" 0 -1 0 "pdflatex"
-  "main.tex" 1683197149 14314 670794a7fd4e959e416f89c14a1140ba ""
+  "main.tex" 1683210060 14316 a381143f1a18a56e1824a839cac073ba ""
   (generated)
   "main.aux"
   "main.log"
